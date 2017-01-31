@@ -1,5 +1,6 @@
 FROM node:4.7-alpine
 
+ENV NPM_CONFIG_LOGLEVEL="warn"
 ARG SOURCE_TYPE="Git"
 ARG SOURCE_URL="https://github.com/temando/docker-minimal-node"
 ARG SOURCE_COMMIT
