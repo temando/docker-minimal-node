@@ -1,0 +1,12 @@
+language: generic
+
+services:
+  - docker
+
+install:
+  - docker build -t testimage .
+
+script:
+  - docker run testimage node -v
+  - docker run testimage npm -v
+  - docker run testimage yarn -v
