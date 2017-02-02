@@ -11,7 +11,10 @@ LABEL com.temando.name="docker-minimal-node" \
       com.temando.vcs-url=$SOURCE_URL \
       com.temando.vcs-ref=$SOURCE_COMMIT
 
-# Install Yarn via NPM until official package for Alpine linux is ready.
+# Install:
+#   - Latest npm (not bundled version).
+#   - Yarn via NPM until official package for Alpine linux is ready.
 RUN npm set registry "http://registry.npmjs.org" \
+  && npm install --global npm \
   && npm install --global yarn \
   && npm cache clean
